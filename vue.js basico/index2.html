@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso vue.js</title>
+</head>
+<body>
+    <div id="app">
+                <h1>{{titulo | uppercase}}</h1>
+                <h2>{{subtitulo | lowercase | capitalize}}</h2>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        let app = new Vue({
+            el: '#app',
+            data: {
+              titulo: "Estas en platzi",
+              subtitulo: "Estas viendo el curso de vue.js basico"
+            },
+            filters: {
+                uppercase: function (str) {
+                    return str.toUpperCase()
+                },
+                lowercase: function (str) {
+                    return str.toLowerCase()
+                },
+                capitalize: function MaysPrimera(string) {
+                    return string.charAt(0).toUpperCase() + 
+                     string.charAt(1).toUpperCase() +
+                     string.charAt(2).toUpperCase() +
+                     string.charAt(3).toUpperCase() + 
+                     string.charAt(4).toUpperCase() + string.slice(5);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
